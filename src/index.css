@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #040D0A;
+  color: #F2F7F5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 15px rgba(53, 230, 161, 0.8));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(53, 230, 161, 1));
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Glassmorphism utility classes */
+.glass-card {
+  background: rgba(6, 19, 15, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(53, 230, 161, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), inset 0 0 2px 1px rgba(53, 230, 161, 0.18);
+}
+
+.glass-stat-card {
+  background: rgba(10, 27, 22, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(53, 230, 161, 0.3);
+}
+
+.glass-input {
+  background: rgba(6, 19, 15, 0.85);
+  border: 1px solid rgba(53, 230, 161, 0.3);
+}
+
+.glass-input:focus-within {
+  border-color: #35E6A1;
+  box-shadow: 0 0 18px rgba(53, 230, 161, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040D0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #35E6A140;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35E6A180;
+}
